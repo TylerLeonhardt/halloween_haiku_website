@@ -10,8 +10,8 @@
       var link1 = data.tweetWith5.url;
       var line2 = data.tweetWith7.tweet;
       var link2 = data.tweetWith7.url;
-      var date = today;
-      var listItemHTML = '<div class=\'tweet\'><span class=\'tweet_text\'>' + line1 + '<br/>' + line2 + '<br/>#HalloweenHaiku</span><span class=\'tweet_timestamp\'>' + date + '</span><span class=\'tweet_user\'>@HaikuHalloween</span></div>';
+      var date = data.today;
+      var listItemHTML = '<div class=\'tweet\'><span class=\'tweet_text\'><a href="' + link1 + '">' + line1 + '</a><br/><a href="' + link2 + '">' + line2 + '</a><br/>#HalloweenHaiku</span><span class=\'tweet_timestamp\'>' + date + '</span><span class=\'tweet_user\'>@HaikuHalloween</span></div>';
       $(listItemHTML).hide().prependTo('#tweets_container').slideDown('slow');
     }
     </script>
@@ -24,19 +24,19 @@
 
       <div id="tweets_container">
         <div class="tweet">
-          <span class="tweet_text">I may look crazy,<br/>but this is just a disguise...<br/>I shop at Target!</span>
+          <span class="tweet_text"><a href"#">I may look crazy,</a><br/><a href"#">but this is just a disguise...</a><br/>I shop at Target!</span>
           <span class="tweet_timestamp">Oct. 31, 2015</span>
           <span class="tweet_user">@HaikuHalloween</span>
         </div>
 
         <div class="tweet">
-          <span class="tweet_text">I may look crazy,<br/>but this is just a disguise...<br/>I shop at Target!</span>
+          <span class="tweet_text"><a href"#">I may look crazy,</a><br/><a href"#">but this is just a disguise...</a><br/>I shop at Target!</span>
           <span class="tweet_timestamp">Oct. 31, 2015</span>
           <span class="tweet_user">@HaikuHalloween</span>
         </div>
 
         <div class="tweet">
-          <span class="tweet_text">I may look crazy,<br/>but this is just a disguise...<br/>I shop at Target!</span>
+          <span class="tweet_text"><a href"#">I may look crazy,</a><br/><a href"#">but this is just a disguise...</a><br/>I shop at Target!</span>
           <span class="tweet_timestamp">Oct. 31, 2015</span>
           <span class="tweet_user">@HaikuHalloween</span>
         </div>
