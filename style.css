@@ -18,10 +18,14 @@ body {
   background-image: url(http://www.transparenttextures.com/patterns/stardust.png), -o-linear-gradient(top, #13002a 29%,#85282c 100%); /* Opera 11.10+ */
   background-image: url(http://www.transparenttextures.com/patterns/stardust.png), -ms-linear-gradient(top, #13002a 29%,#85282c 100%); /* IE10+ */
   background-image: url(http://www.transparenttextures.com/patterns/stardust.png), linear-gradient(to bottom, #13002a 29%,#85282c 100%);
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 #main {
-  width: 75%;
+  max-width: 530px;
+  height: 85%;
   margin: 0 auto;
   margin-top: 5%;
 }
@@ -30,13 +34,16 @@ h2 {
   font-family: "PWScared";
   font-size: 60px;
   color: white;
+  z-index: 99999;
+  position: relative;
+  word-wrap: normal;
 }
 
 #moon {
   position: absolute;
   top: -55px;
   right: -50px;
-  height: 300px;
+  height: 200px;
 }
 
 #tweets_container {
@@ -53,6 +60,11 @@ h2 {
   font-size: 20px;
   color: black;
   box-shadow: 0 3px 6px rgba(0,0,0,0.75), 0 3px 6px rgba(0,0,0,0.95);
+  min-height: 0px;
+}
+
+.tweet:last-child {
+  margin-bottom: 120px;
 }
 
 .tweet_text {
@@ -67,4 +79,14 @@ h2 {
 
 .tweet_user {
   float: right;
+}
+
+#footer_container {
+  background-image: url("img/footer.png");
+  background-repeat: repeat-y;
+  background-size: cover;
+  height: 150px;
+  margin-top: -120px;
+  z-index: 9999;
+  position: relative;
 }
