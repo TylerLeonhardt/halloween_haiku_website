@@ -1,19 +1,34 @@
 <html>
   <head>
     <title>Halloween Haikus</title>
+    <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,600italic,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript">
+
+    var socket = io.connect('http://fun-projects.cloudapp.net/');
+    socket.on('tweet', function (data) {
+      add(data);      
+    });
+
     function add(data) {
       var line1 = data.tweetWith5.tweet;
       var link1 = data.tweetWith5.url;
       var line2 = data.tweetWith7.tweet;
       var link2 = data.tweetWith7.url;
       var date = data.today;
-      var listItemHTML = '<div class=\'tweet\'><span class=\'tweet_text\'><a href="' + link1 + '">' + line1 + '</a><br/><a href="' + link2 + '">' + line2 + '</a><br/>#HalloweenHaiku</span><span class=\'tweet_timestamp\'>' + date + '</span><span class=\'tweet_user\'>@HaikuHalloween</span></div>';
+      var listItemHTML = '<div class=\'tweet\'><span class=\'tweet_text\'><a target="_blank" href="' + link1 + '">' + line1 + '</a><br/><a href="' + link2 + '">' + line2 + '</a><br/>#HalloweenHaiku</span><span class=\'tweet_timestamp\'>' + date + '</span><span class=\'tweet_user\'>@HaikuHalloween</span></div>';
       $(listItemHTML).hide().prependTo('#tweets_container').slideDown('slow');
     }
+
+   $(document).ready(function() {
+     $.get( "http://fun-projects.cloudapp.net/halloween-haiku/data", function(res) {
+       for(var i = 0; i < res.length; i++) {
+         add(res[i], "fast");
+       }
+     });
+   });
     </script>
   </head>
 
@@ -23,7 +38,7 @@
       <img src="img/moon.png" id="moon" />
 
       <div id="tweets_container">
-        <div class="tweet">
+        <!--<div class="tweet">
           <span class="tweet_text"><a href"#">I may look crazy,</a><br/><a href"#">but this is just a disguise...</a><br/>I shop at Target!</span>
           <span class="tweet_timestamp">Oct. 31, 2015</span>
           <span class="tweet_user">@HaikuHalloween</span>
@@ -45,7 +60,7 @@
           <span class="tweet_text">I may look crazy,<br/>but this is just a disguise...<br/>I shop at Target!</span>
           <span class="tweet_timestamp">Oct. 31, 2015</span>
           <span class="tweet_user">@HaikuHalloween</span>
-        </div>
+        </div>-->
       </div>
     </div>
 
