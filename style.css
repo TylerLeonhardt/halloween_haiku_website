@@ -38,3 +38,33 @@ h2 {
   right: -50px;
   height: 300px;
 }
+
+#tweets_container {
+  height: 75%;
+  overflow: auto;
+}
+
+.tweet {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: black;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.75), 0 3px 6px rgba(0,0,0,0.95);
+}
+
+.tweet_text {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.tweet_timestamp, .tweet_user {
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.tweet_user {
+  float: right;
+}
